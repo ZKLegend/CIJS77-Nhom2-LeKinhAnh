@@ -1,0 +1,148 @@
+/* New Release Menu Style */
+.new-release {
+    width: 75%;
+    border: 1px solid black;
+    margin: auto;
+    padding: 0 60px 0 60px;
+    background-color: #170f23;;
+}
+
+.section-title {
+    font-family: Inter,sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    color: white;
+}
+
+.new-release-menu {
+    display: flex;
+    align-items: center;
+}
+
+.allItems {
+    margin-left: auto;
+    color: grey;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.songBtn, .albumBtn {
+    margin-right: 20px;
+    padding: 4px 24px;
+    border: 1px solid #9b4de0;
+    border-radius: 12px;
+    background-color: #9b4de0;
+    color: white;
+}
+
+
+/* Mới Phát Hành Items Style */
+.new-release-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0 0 0;
+}
+
+.new-release-items {
+    display: flex;
+    width: 30%;
+    height: 94px;
+    padding: 10px;
+    /* margin: 20px 0 0 0; */
+}
+
+.items-style:hover {
+    border-radius: 5px;
+    background-color: rgb(66, 64, 64);
+}
+
+.songs-info {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   margin-left: 10px;
+}
+
+.songsName {
+    font-size: 14px;
+    font-family: Inter,sans-serif;
+    color: white;
+}
+
+.singer {
+    text-decoration: none;
+    color: grey;
+}
+
+.timeUpload {
+    color: grey;
+}
+
+a:hover {
+    color: #9b4de0;
+    text-decoration: underline;
+}
+
+/* Playlist style */
+.playlist-item {
+    width: 15%;
+}
+
+.playlist-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.playlist-thumbnail {
+    position: relative;
+    width: 100%;
+}
+
+.button-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    background-color: #808080a1;
+    width: 100%;
+    height: 100%;
+
+}
+
+.playlist-link:hover ~ .button-container{
+    display: block;
+}
+
+.playlist-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.thumbnail-img {
+    width: 100%;
+}
+
+.playlistName {
+    display: block;
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px 0 -10px 0;
+}
+
+.playlistName:hover {
+    color: #9b4de0;
+    text-decoration: none;
+}
+
+.playlistInfo {
+    font-weight: 600;
+    font-family: Inter,sans-serif;
+    color: grey;
+}
