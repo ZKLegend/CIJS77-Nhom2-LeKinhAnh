@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoginFailed = () => {
+const LoginFail = () => {   
     return (
         <>
             <h1>Fail Login</h1>
@@ -8,4 +8,4 @@ const LoginFailed = () => {
     )
 }
 
-export default LoginFailed;
+export default LoginFail;

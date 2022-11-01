@@ -12,7 +12,8 @@ const Login = (props) => {
         }
 
         else {
-            props.setIsLoginFailed(true);
+            props.setIsLoginFail(true); 
+            // Uncaught TypeError: props.setIsLoginFail is not a function
         }
         
         console.log(user.username);
