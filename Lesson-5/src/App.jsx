@@ -10,9 +10,9 @@ const App = () => {
   return (
   <>
     <h1>Welcome to React Vite Micro App!</h1>
-    { isLogin === true ? <Login setIsLogin={setIsLogin}/> : null}
+    { isLogin === true && isLoginFail === false ? <Login setIsLogin={setIsLogin} setIsLoginFail={setIsLoginFail}/> : null}
     { isLogin === false ? <Dashboard/> : null}
-    { isLoginFail === true ? <LoginFail setIsLoginFail={setIsLoginFail}/> : null}
+    { isLoginFail === true ? <LoginFail /> : null}
     {/* Chưa làm được Login Fail */}
   </>
   )
