@@ -11,10 +11,10 @@ const Login = (props) => {
             props.setIsLogin(false);
         }
 
-        else {
-            props.setIsLoginFail(true); 
-            // Uncaught TypeError: props.setIsLoginFail is not a function
-        }
+        // else {
+        //     props.setIsLoginFail(true); 
+        //     // Uncaught TypeError: props.setIsLoginFail is not a function
+        // }
         
         console.log(user.username);
         console.log(user.password);
