@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 
 const TodoList = () => {
+  const [newItems, setNewItems] = useState([]);
   const [items, setItems] = useState([
     "Hit the gym",
     "Meet George",
@@ -18,8 +19,14 @@ const TodoList = () => {
 
   const addItems = () => {
     setItems([...items, input]);
+    localStorage.setItem("items", JSON.stringify([...newItems, input]));
+    setNewItems([...newItems, input]);
     setInput("");
   };
+
+  // useEffect(() => {
+  //   setItems([...items, JSON.parse(localStorage.getItem("items"))]);
+  // }, []);
 
   const deleteItems = (deleteIndex) => {
     // items.splice(index, 1);
