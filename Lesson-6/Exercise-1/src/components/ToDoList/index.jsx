@@ -17,11 +17,8 @@ const TodoList = () => {
   };
 
   const addItems = () => {
-    console.log(input);
-    localStorage.setItem("value", input);
     setItems([...items, input]);
     setInput("");
-    console.log("Value:", localStorage.value);
   };
 
   const deleteItems = (deleteIndex) => {

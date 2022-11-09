@@ -7,10 +7,10 @@ import StudentClass from "./components/StudentClass";
 const App = () => {
   return (
   <>
-    {/* <Counter />
-    <Student /> */}
-    <CounterClass />
-    <StudentClass />
+    <Counter />
+    <Student />
+    {/* <CounterClass />
+    <StudentClass /> */}
   </>
 );
 };
