@@ -11,8 +11,6 @@ const TodoList = () => {
     "Organize office",
   ]);
 
-
-
   const [input, setInput] = useState("");
   const [newItems, setNewItems] = useState([]);
 
@@ -33,9 +31,7 @@ const TodoList = () => {
 
 
   useEffect(() => {
-    if (newItems) {
       localStorage.setItem("items", JSON.stringify([...newItems, input]));
-    }
   }, [newItems]);
 
 

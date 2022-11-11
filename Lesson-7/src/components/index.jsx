@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 
@@ -14,18 +14,20 @@ const Table = () => {
     const [input, setInput] = useState({company:"", contact:"", country:""});
 
     const addCompany = () =>{
-        // setTableData([...tableData, {[Company]: input}]);
+        setTableData([...tableData, {Company: input.company, Contact: input.contact, Country: input.country}]);
+        setInput({company:"", contact:"", country:""});
     }
     
-    const addContact = () =>{
-        // setTableData([...tableData, {Contact: input}]);
-    }
+    // const addContact = () =>{
+    //     setTableData([...tableData, {Contact: input.contact}]);
+    //     setInput({...input, contact:""});
+    // }
 
-    const addCountry = () =>{
-        // setTableData([...tableData, {Country: input}]);
-    }
+    // const addCountry = () =>{
+    //     setTableData([...tableData, {Country: input.country}]);
+    //     setInput({...input, country:""});
+    // }
 
-   
     const handleInput = (event) =>{
         const {name, value} = event.target;
         console.log("Name", name);
@@ -34,14 +36,18 @@ const Table = () => {
         console.log(input);
     }
 
+    useEffect(() => {
+
+    })
+
     return(
         <>
             <table>
                 <thead>
                     <tr>
+                        <th><button onClick={addCompany} name="Company">Add</button></th>
                         <th><button onClick={addCompany}>Add</button></th>
-                        <th><button onClick={addContact}>Add</button></th>
-                        <th><button onClick={addCountry}>Add</button></th>
+                        <th><button onClick={addCompany}>Add</button></th>
                     </tr>
                     <tr>
                         <th><input type="text" onChange={handleInput} value = {input.company} name="company"/></th>
