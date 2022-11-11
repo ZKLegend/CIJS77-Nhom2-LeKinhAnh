@@ -11,6 +11,8 @@ const TodoList = () => {
     "Organize office",
   ]);
 
+
+
   const [input, setInput] = useState("");
   const [newItems, setNewItems] = useState([]);
 
@@ -24,17 +26,20 @@ const TodoList = () => {
     setInput("");
   };
 
+  useEffect(() => {
+      const itemLocal = JSON.parse(localStorage.getItem("items"));
+      setItems([...items, ...itemLocal]); 
+  }, []);
+
 
   useEffect(() => {
-    localStorage.setItem("items", JSON.stringify([...newItems, input]));
+    if (newItems) {
+      localStorage.setItem("items", JSON.stringify([...newItems, input]));
+    }
   }, [newItems]);
 
 
-  useEffect(() => {
-    const itemLocal = JSON.parse(localStorage.getItem("items"));
-    setItems([...items, itemLocal]);
-  }, []);
-
+  
   const deleteItems = (deleteIndex) => {
     // items.splice(index, 1);
     // setItems([...items]);
@@ -63,7 +68,7 @@ const TodoList = () => {
       <ul id="myUL">
         {items.map((value, index) => {
           return (
-            <li className="list-item">
+            <li className="list-item" key={index}>
               <span>{value}</span>
               <button onClick={() => deleteItems(index)}>x</button>
             </li>
