@@ -12,7 +12,6 @@ const TodoList = () => {
   ]);
 
   const [input, setInput] = useState("");
-  const [newItems, setNewItems] = useState([]);
 
   const handleInput = (event) => {
     setInput(event.target.value);
@@ -20,22 +19,19 @@ const TodoList = () => {
 
   const addItems = () => {
     setItems([...items, input]);
-    setNewItems([...newItems, input]);
+    localStorage.setItem("items", JSON.stringify([...items, input]));
     setInput("");
   };
 
   useEffect(() => {
       const itemLocal = JSON.parse(localStorage.getItem("items"));
-      setItems([...items, ...itemLocal]); 
+      console.log(itemLocal);
+      if (itemLocal != null) {
+        setItems([...itemLocal]); 
+      }
   }, []);
 
 
-  useEffect(() => {
-      localStorage.setItem("items", JSON.stringify([...newItems, input]));
-  }, [newItems]);
-
-
-  
   const deleteItems = (deleteIndex) => {
     // items.splice(index, 1);
     // setItems([...items]);
