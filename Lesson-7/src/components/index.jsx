@@ -1,19 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-// if (!localStorage.getItem("data")) {
-//     localStorage.setItem(
-//         "data",
-//         JSON.stringify([
-//             {Company: "Lazada", Contact: "ABC", Country: "VietNam"},
-//             {Company: "Shopee", Contact: "DEF", Country: "Germany"},
-//             {Company: "Facebook", Contact: "IGH", Country: "USA"},
-//             {Company: "Amazon", Contact: "LMN", Country: "Canada"},
-//             {Company: "Ebay", Contact: "XYZ", Country: "Campuchia"}
-//         ])
-//     )
-// }
-
-
 const Table = () => {
     const [tableData, setTableData] = useState([
         {Company: "Lazada", Contact: "ABC", Country: "VietNam"},
@@ -25,21 +11,20 @@ const Table = () => {
 
     const [input, setInput] = useState({company:"", contact:"", country:""});
 
-    // useEffect(() => {
-    //     const localTableData = JSON.parse(localStorage.getItem("data"));
-    //     setTableData([...tableData, ...localTableData]);
-    // }, []);
-
-    // useEffect(() => {
-    //         localStorage.setItem("data", JSON.stringify([
-    //             {...input}
-    //         ]))
-    // }, [input]);
-
     const handleClick = () =>{
         setTableData([...tableData, {Company: input.company, Contact: input.contact, Country: input.country}]);
+        localStorage.setItem("data", JSON.stringify([...tableData, input]));
         setInput({company:"", contact:"", country:""});
     }
+
+    useEffect(() => {
+        const localTableData = JSON.parse(localStorage.getItem("data"));
+        console.log(localTableData);
+        if (localTableData != null) {
+            setTableData([...localTableData]);
+        }
+        
+    }, []);
     
     const handleInput = (event) =>{
         const {name, value} = event.target;
