@@ -23,7 +23,6 @@ const Table = () => {
         if (localTableData != null) {
             setTableData([...localTableData]);
         }
-        
     }, []);
     
     const handleInput = (event) =>{
